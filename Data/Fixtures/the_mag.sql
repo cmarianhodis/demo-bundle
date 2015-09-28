@@ -337,10 +337,9 @@ UNLOCK TABLES;
 -- Table structure for table `group`
 --
 
-DROP TABLE IF EXISTS `group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `group` (
+CREATE TABLE IF NOT EXISTS `group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `site_uid` varchar(32) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
@@ -358,7 +357,7 @@ CREATE TABLE `group` (
 
 LOCK TABLES `group` WRITE;
 /*!40000 ALTER TABLE `group` DISABLE KEYS */;
-INSERT INTO `group` VALUES (1,'0ab498464671a28d34c8b1511867e9d7','administrator','The users of this group have all rights on the website and its features.'),(2,'0ab498464671a28d34c8b1511867e9d7','validator','Edition: Users of this group can create, edit and publish. User Management & Plugins: Restricted to administrators'),(3,'0ab498464671a28d34c8b1511867e9d7','contributor','Users of this group can only create and edit. Publishing is unauthorized. User Management & Plugins: Restricted to administrators');
+INSERT IGNORE INTO `group` VALUES (1,'0ab498464671a28d34c8b1511867e9d7','administrator','The users of this group have all rights on the website and its features.'),(2,'0ab498464671a28d34c8b1511867e9d7','validator','Edition: Users of this group can create, edit and publish. User Management & Plugins: Restricted to administrators'),(3,'0ab498464671a28d34c8b1511867e9d7','contributor','Users of this group can only create and edit. Publishing is unauthorized. User Management & Plugins: Restricted to administrators');
 /*!40000 ALTER TABLE `group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -886,10 +885,9 @@ UNLOCK TABLES;
 -- Table structure for table `site`
 --
 
-DROP TABLE IF EXISTS `site`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `site` (
+CREATE TABLE IF NOT EXISTS `site` (
   `uid` varchar(32) NOT NULL,
   `label` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
@@ -915,10 +913,9 @@ UNLOCK TABLES;
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user` (
+CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -943,7 +940,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-IGNORE IGNORE INTO`user` VALUES (1,'admins','admins@backbee.com','e9a7cd362c731ef933cfbfce19c44cbf',0,1,'SuperAdmin','SuperAdmin','6b4569d8a6905d8b1ec33dd985b22063cd2a272b','fafb03a21543992b90fcf7d87cd4965e',1,'2015-06-17 14:18:03','2015-06-17 14:18:03'),(2,'tatatatat','cl.bonfils@gmail.com','e9b67abae95a7938045d40389fcf0d69',0,1,'Clement','bonfils','0bc052ee7c5cfeea8a464c300ec97a1b300dc1e1','cd2c34e1db9dcefe98065574c4cd9569',1,'2015-06-23 14:30:05','2015-06-23 14:30:05'),(3,'mickaelandrieu','andrieu.travail@gmail.com','72cb71bb84f9cb56e2773c608eae80ce',0,1,'Mickaël','Andrieu','9843eb15a480c1ef0e503b57c487c4baefaf3fe8','e0b66ac1442f525aace3b18c120501a6',1,'2015-07-24 16:54:30','2015-07-24 16:54:30'),(7,'1111111111111111111111111111111111111111','andrieu.travail@gmail.com','f7cc7993707e2dccd6a005d5343e4f76',0,1,'Mickaël','Andrieu','abf8dc5f97b0c178f369939bed7531e26aaf7ff2','f84e772835f1503ce2c025c3c2954f83',1,'2015-07-28 17:49:30','2015-07-28 17:49:30'),(12,'13243242424242442424244242424424242442424244242424244242424242442424242','jeremy.greaux@gmail.com','8c26e55cb57953148e93161de61ec9a9',0,1,'Catherien','Duchenne','9661169a251ab7ffb2e0e0a17e498ddcc4b640cd','7df9597c943623fee91b06f2acbde70b',1,'2015-07-28 17:56:06','2015-07-28 17:56:06');
+INSERT IGNORE INTO`user` VALUES (1,'admins','admins@backbee.com','e9a7cd362c731ef933cfbfce19c44cbf',0,1,'SuperAdmin','SuperAdmin','6b4569d8a6905d8b1ec33dd985b22063cd2a272b','fafb03a21543992b90fcf7d87cd4965e',1,'2015-06-17 14:18:03','2015-06-17 14:18:03'),(2,'tatatatat','cl.bonfils@gmail.com','e9b67abae95a7938045d40389fcf0d69',0,1,'Clement','bonfils','0bc052ee7c5cfeea8a464c300ec97a1b300dc1e1','cd2c34e1db9dcefe98065574c4cd9569',1,'2015-06-23 14:30:05','2015-06-23 14:30:05'),(3,'mickaelandrieu','andrieu.travail@gmail.com','72cb71bb84f9cb56e2773c608eae80ce',0,1,'Mickaël','Andrieu','9843eb15a480c1ef0e503b57c487c4baefaf3fe8','e0b66ac1442f525aace3b18c120501a6',1,'2015-07-24 16:54:30','2015-07-24 16:54:30'),(7,'1111111111111111111111111111111111111111','andrieu.travail@gmail.com','f7cc7993707e2dccd6a005d5343e4f76',0,1,'Mickaël','Andrieu','abf8dc5f97b0c178f369939bed7531e26aaf7ff2','f84e772835f1503ce2c025c3c2954f83',1,'2015-07-28 17:49:30','2015-07-28 17:49:30'),(12,'13243242424242442424244242424424242442424244242424244242424242442424242','jeremy.greaux@gmail.com','8c26e55cb57953148e93161de61ec9a9',0,1,'Catherien','Duchenne','9661169a251ab7ffb2e0e0a17e498ddcc4b640cd','7df9597c943623fee91b06f2acbde70b',1,'2015-07-28 17:56:06','2015-07-28 17:56:06');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
