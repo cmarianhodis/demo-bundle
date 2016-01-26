@@ -2,7 +2,7 @@ bundle:
     name: DemoBundle
     description: Demobundle provides content types for new websites
     author: e.chau <eric.chau@lp-digital.fr>
-    version: 1
+    version: 1.1.0-beta
     enable: true
     config_per_site: false
     admin_controller:
