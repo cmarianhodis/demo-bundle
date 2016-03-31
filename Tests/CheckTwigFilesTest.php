@@ -36,7 +36,7 @@ class CheckTwigFilesTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('DemoBundle', $configBundle['name']);
         $this->assertSame('Demobundle provides content types for new websites', $configBundle['description']);
         $this->assertSame('e.chau <eric.chau@lp-digital.fr>', $configBundle['author']);
-        $this->assertSame(1, $configBundle['version']);
+        $this->assertSame('1.1.0', $configBundle['version']);
         $this->assertTrue($configBundle['enable']);
         $this->assertFalse($configBundle['config_per_site']);
     }
