@@ -1,6 +1,6 @@
 {
     "name": "backbee/demo-bundle",
-    "description": "BackBee demonstration bundle",
+    "description": "BackBee CMS demonstration bundle",
     "type": "backbee-bundle",
     "license": "GPL-3.0+",
     "keywords": ["backbee", "article", "blog"],
@@ -19,10 +19,8 @@
             "email": "nicolas.dufreche@lp-digital.fr"
         }
     ],
-    "require": {
-        "backbee/backbee": "~1.1.0"
-    },
     "require-dev": {
+        "backbee/backbee-php": "~1.2.0",
         "symfony/yaml": ">=2.5"
     },
     "autoload": {
